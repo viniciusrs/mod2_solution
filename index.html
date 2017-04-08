@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="ShoppingListCheckOff">
+<head>
+	<title>Lunch Checker</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="styles/bootstrap.min.css">
+	<link rel="stylesheet" href="styles/general.css">
+	<script src="scripts/jquery.min.js"></script>
+	<script src="scripts/bootstrap.min.js"></script>
+	<script src="scripts/angular.min.js"></script>
+    <script src="scripts/app.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Shopping List Check</h1>		
+			</div>
+		</div>
+
+		<div ng-controller="ToBuyController as toBuy">
+			<div class="col-md-6">
+				<h2>To Buy List</h2>
+				<ol>
+			        <li ng-repeat="item in toBuy.items">
+			          <ul>{{ item.quantity }} of {{ item.name }}
+			          <button ng-click="toBuy.updateList(toBuy.items, toBuy.boughtItems, $index)">Bought</button>
+			        </li>
+		    	</ol>
+			</div>
+		</div>
+
+		<div ng-controller="AlreadyBoughtController as alreadyBought">
+			<div class="col-md-6">
+				<h2>Bought List</h2>
+				<ol>
+			        <li ng-repeat="item in alreadyBought.boughtItems">
+			          <ul>{{ item.quantity }} of {{ item.name }}
+			        </li>
+		    	</ol>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
