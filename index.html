@@ -23,8 +23,8 @@
 				<h2>To Buy List</h2>
 				<ol>
 			        <li ng-repeat="item in toBuy.items">
-			          <ul>{{ item.quantity }} of {{ item.name }}
-			          <button ng-click="toBuy.updateList(toBuy.items, toBuy.boughtItems, $index)">Bought</button>
+					{{ item.quantity }} of {{ item.name }}
+			         <button ng-click="toBuy.updateList(toBuy.items, toBuy.boughtItems, $index)">Bought</button>
 			        </li>
 		    	</ol>
 			</div>
@@ -38,7 +38,7 @@
 				</div>
 				<ol>
 			        <li ng-repeat="item in alreadyBought.boughtItems">
-			          <ul>{{ item.quantity }} of {{ item.name }}
+						{{ item.quantity }} of {{ item.name }}
 			        </li>
 		    	</ol>
 			</div>
