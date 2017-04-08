@@ -23,7 +23,6 @@
 		var alreadyBought = this;
 
 		alreadyBought.boughtItems = ShoppingListCheckOffService.getBoughtItems();
-		alreadyBought.flag = ShoppingListCheckOffService.getFlag();
 	};
 
 	function ShoppingListCheckOffService(){
@@ -54,14 +53,6 @@
 
 		var boughtItems = [];
 
-		var flag = {
-			toBuy: true,
-			bought: true
-		}
-
-		console.log(flag.bought);
-		console.log(boughtItems);
-
 		service.updateList = function (toBuyList, boughtItemsList, index){
 			var item = {
 				name: toBuyList[index].name,
@@ -70,13 +61,6 @@
 
 			boughtItemsList.push(item);
 			toBuyList.splice(index, 1);
-
-			if (boughtItemsList[0] === ''){
-				flag.bought = false;
-			};
-
-			console.log(flag.bought);
-			console.log(boughtItemsList);
 		};
 
 		service.getBuyItems = function () {
@@ -85,10 +69,6 @@
 
 		service.getBoughtItems = function () {
 	    	return boughtItems;
-		};
-
-		service.getFlag = function () {
-	    	return flag;
 		};
 	};
 

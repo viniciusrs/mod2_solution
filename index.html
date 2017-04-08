@@ -33,6 +33,9 @@
 		<div ng-controller="AlreadyBoughtController as alreadyBought">
 			<div class="col-md-6">
 				<h2>Bought List</h2>
+				<div ng-if="alreadyBought.boughtItems.length === 0">
+					<p>teste</p>
+				</div>
 				<ol>
 			        <li ng-repeat="item in alreadyBought.boughtItems">
 			          <ul>{{ item.quantity }} of {{ item.name }}
