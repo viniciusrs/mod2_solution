@@ -64,8 +64,8 @@ label{
 }
 
 @media (max-width: 992px){
-	div.list:last-child{
-		margin-top: 20px;
+	.list{
+		margin-bottom: 50px;
 	}
 }
 
