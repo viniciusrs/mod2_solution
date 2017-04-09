@@ -14,33 +14,42 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h1>Shopping List Check</h1>		
+				<h1>Shopping List</h1>		
 			</div>
 		</div>
 
 		<div ng-controller="ToBuyController as toBuy">
 			<div class="col-md-6">
-				<h2>To Buy List</h2>
-				<ol>
-			        <li ng-repeat="item in toBuy.items">
-					{{ item.quantity }} of {{ item.name }}
-			         <button ng-click="toBuy.updateList(toBuy.items, toBuy.boughtItems, $index)">Bought</button>
-			        </li>
-		    	</ol>
+				<div class="list">
+					<h2>To Buy List</h2>
+					<hr>
+					<div ng-if="toBuy.items.length === 0">
+						<p>List(s) are empty</p>
+					</div>
+					<table>
+				        <tr ng-repeat="item in toBuy.items">
+							<td><label>{{ item.quantity }}</label> of {{ item.name }}.</td>
+				         	<td><button ng-click="toBuy.updateList(toBuy.items, toBuy.boughtItems, $index)">Bought</button></td>
+				        </tr>
+			    	</table>
+		    	</div>
 			</div>
 		</div>
 
 		<div ng-controller="AlreadyBoughtController as alreadyBought">
 			<div class="col-md-6">
-				<h2>Bought List</h2>
-				<div ng-if="alreadyBought.boughtItems.length === 0">
-					<p>teste</p>
+				<div class="list">
+					<h2>Bought List</h2>
+					<hr>
+					<div ng-if="alreadyBought.boughtItems.length === 0">
+						<p>List(s) are empty</p>
+					</div>
+					<table>
+				        <tr ng-repeat="item in alreadyBought.boughtItems">
+							<td><label>{{ item.quantity }}</label> of {{ item.name }}.</td>
+				        </tr>
+			    	</table>
 				</div>
-				<ol>
-			        <li ng-repeat="item in alreadyBought.boughtItems">
-						{{ item.quantity }} of {{ item.name }}
-			        </li>
-		    	</ol>
 			</div>
 		</div>
 	</div>
