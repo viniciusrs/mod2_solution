@@ -6,6 +6,12 @@ body{
 	background-color: white;
 }
 
+.icon{
+	font-size: 35px;
+	color: black;
+	margin-left: 20px;
+}
+
 h1{
 	font-size: 50px;
 	margin-bottom: 50px;
@@ -50,7 +56,7 @@ tr
     line-height: 20px;
 }
 
-label{
+.quantity{
 	color: #29bce5;
 }
 

@@ -14,7 +14,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h1>Shopping List</h1>		
+				<h1>Shopping List<span class="glyphicon glyphicon-shopping-cart icon" aria-hidden="true"></span></h1>		
 			</div>
 		</div>
 
@@ -28,7 +28,7 @@
 					</div>
 					<table>
 				        <tr ng-repeat="item in toBuy.items">
-							<td><label>{{ item.quantity }}</label> of {{ item.name }}.</td>
+							<td><span class="quantity">{{ item.quantity }}</span> of {{ item.name }}.</td>
 				         	<td><button ng-click="toBuy.updateList(toBuy.items, toBuy.boughtItems, $index)">Bought</button></td>
 				        </tr>
 			    	</table>
@@ -46,7 +46,7 @@
 					</div>
 					<table>
 				        <tr ng-repeat="item in alreadyBought.boughtItems">
-							<td><label>{{ item.quantity }}</label> of {{ item.name }}.</td>
+							<td><span class="quantity">{{ item.quantity }}</span> of {{ item.name }}.</td>
 				        </tr>
 			    	</table>
 				</div>
