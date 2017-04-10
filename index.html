@@ -24,7 +24,7 @@
 					<h2>To Buy List</h2>
 					<hr>
 					<div ng-if="toBuy.items.length === 0">
-						<p>List(s) are empty</p>
+						<p>Already bought</p>
 					</div>
 					<table>
 				        <tr ng-repeat="item in toBuy.items">
@@ -42,7 +42,7 @@
 					<h2>Bought List</h2>
 					<hr>
 					<div ng-if="alreadyBought.boughtItems.length === 0">
-						<p>List(s) are empty</p>
+						<p>Nothing bought yet</p>
 					</div>
 					<table>
 				        <tr ng-repeat="item in alreadyBought.boughtItems">
