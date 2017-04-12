@@ -29,7 +29,7 @@
 					<table>
 				        <tr ng-repeat="item in toBuy.items">
 							<td><span class="quantity">{{ item.quantity }}</span> of {{ item.name }}.</td>
-				         	<td><button ng-click="toBuy.updateList(toBuy.items, toBuy.boughtItems, $index)">Bought</button></td>
+				         	<td><button ng-click="toBuy.updateList($index)">Bought</button></td>
 				        </tr>
 			    	</table>
 		    	</div>

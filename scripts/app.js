@@ -13,8 +13,8 @@
 		toBuy.items = ShoppingListCheckOffService.getBuyItems();
 		toBuy.boughtItems = ShoppingListCheckOffService.getBoughtItems();
 
-		toBuy.updateList = function (toBuyList, boughtItemsList, index){
-			ShoppingListCheckOffService.updateList(toBuyList, boughtItemsList, index);
+		toBuy.updateList = function (index){
+			ShoppingListCheckOffService.updateList(index);
 		};
 	};
 
@@ -28,7 +28,7 @@
 	function ShoppingListCheckOffService(){
 		var service = this;
 
-		var toBuyItems = [
+		service.toBuyItems = [
 			{
 				name: 'Cookies',
 				quantity: 10
@@ -51,24 +51,19 @@
 			}
 		];
 
-		var boughtItems = [];
+		service.boughtItems = [];
 
-		service.updateList = function (toBuyList, boughtItemsList, index){
-			var item = {
-				name: toBuyList[index].name,
-				quantity: toBuyList[index].quantity
-			}
-
-			boughtItemsList.push(item);
-			toBuyList.splice(index, 1);
+		service.updateList = function (index){
+			service.boughtItems.push(service.toBuyItems[index]);
+			service.toBuyItems.splice(index, 1);
 		};
 
 		service.getBuyItems = function () {
-	    	return toBuyItems;
+	    	return service.toBuyItems;
 		};
 
 		service.getBoughtItems = function () {
-	    	return boughtItems;
+	    	return service.boughtItems;
 		};
 	};
 
